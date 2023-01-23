@@ -11,8 +11,87 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
 <body>
-    
+
+    <main class="container py-5">
+        <h2>Formulario de Registro de Asistencia</h2>
+
+        <section class="my-4">
+           <form id="formRegistroAsistencia" class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="nomComite" class="form-label">NOMBRE DEL COMIT&Eacute; O DE LA REUNI&Oacute;N:</label>
+                    <input id="nomComite" type="text" class="form-control">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="ciudad" class="form-label">CIUDAD:</label>
+                    <input id="ciudad" type="text" class="form-control">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="horaInicio" class="form-label">HORA INICIO:</label>
+                    <input id="horaInicio" type="time" class="form-control">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="horaFin" class="form-label">HORA FIN</label>
+                    <input id="horaFin" type="time" class="form-control">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="lugar" class="form-label">LUGAR Y/O ENLACE:</label>
+                    <input id="lugar" type="text" class="form-control">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="direccionGeneral" class="form-label">DIRECCIÓN GENERAL:</label>
+                    <input id="direccionGeneral" type="text" class="form-control">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="regional" class="form-label">REGIONAL:</label>
+                    <input id="regional" type="text" class="form-control">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="centroFormacion" class="form-label">CENTRO DE FORMACI&Oacute;N:</label>
+                    <input id="centroFormacion" type="text" class="form-control">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="agenda" class="form-label">AGENDA O PUNTOS PARA DESARROLLAR:</label>
+                    <textarea id="agenda" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="objetivos" class="form-label">OBJETIVO(S) DE LA REUNI&Oacute;N:</label>
+                    <textarea id="objetivos" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="conclusiones" class="form-label">CONCLUSIONES:</label>
+                    <textarea id="conclusiones" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="actividad" class="form-label">ACTIVIDAD:</label>
+                    <textarea id="actividad" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="responsable" class="form-label">RESPONSABLE:</label>
+                    <input id="responsable" type="text" class="form-control">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="responsable" class="form-label">FECHA:</label>
+                    <input id="responsable" type="date" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="formFileMultiple" class="form-label">Incorporar registro de asistencia(Imagenes o captura de pantalla)</label>
+                    <input class="form-control" type="file" id="formFileMultiple" multiple>
+                </div>
+
+                <div class="my-4 text-center">
+                    <button type="submit" class="btn btn-lg btn-success">Enviar Formulario</button>
+                </div>
+           </form>
+        </section>
+    </main>
+
     <!-- Bootstrap JS -->
     <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- JSPDF -->
+    <script src="./js/jspdf.min.js"></script>
+    <!-- Signature_Pad -->
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+    <!-- APP JS -->
+    <script src="./js/app.js"></script>
 </body>
 </html>
