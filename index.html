@@ -9,6 +9,10 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="./assets/bootstrap-icons/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
@@ -70,14 +74,25 @@
                     <input id="responsable" type="text" class="form-control">
                 </div>
                 <div class="col-md-6 mb-3">
-                    <label for="responsable" class="form-label">FECHA:</label>
-                    <input id="responsable" type="date" class="form-control">
+                    <label for="fecha" class="form-label">FECHA:</label>
+                    <input id="fecha" type="date" class="form-control">
                 </div>
-                <div class="mb-3">
-                    <label for="formFileMultiple" class="form-label">Incorporar registro de asistencia(Imagenes o captura de pantalla)</label>
-                    <input class="form-control" type="file" id="formFileMultiple" multiple>
-                </div>
+                <div class="mb-3 col-12">
+                    <div class="border border-2 border-dark-subtle rounded p-3">
 
+                       <h5 class="my-2 text-center">ASISTENTES: (Incorporar registro de asistencia)</h5>
+                       <p><b>Nota:</b> Puede incluirse imagen o captura de pantalla de los asistentes, si se trata de una reunión virtual o, de los asistentes que participan a través de una plataforma virtual.</p>
+                       
+                       <div class="row p-3" id="contenedorIMG">
+                       </div>
+
+                       <div class="container-file text-start">
+                            <input type="file" class="file" id="file" name="file[]" multiple>
+                            <span class="btn btn-primary shadow-sm fw-semibold">Agregar <i class="bi bi-card-image"></i></span>
+                       </div>
+
+                    </div>
+                </div>
                 <div class="my-4 text-center">
                     <button type="submit" class="btn btn-lg btn-success">Enviar Formulario</button>
                 </div>
