@@ -1,5 +1,7 @@
 const formularioPDF = document.getElementById('formRegistroAsistencia');
 var file = document.getElementById('file');
+let arrayIMG = [];
+let imgPosition = 0;
 
 function cargarImagen(url){
 
@@ -26,12 +28,17 @@ function cargarImagen(url){
 }
 
 async function crearIMG(file, i, imgID){
+
     let img = document.createElement('div');
     img.classList.add('img','col-2','mx-1','mb-1',imgID);
     img.dataset.id = imgID;
     img.setAttribute('style',`background-image: url(${URL.createObjectURL(file.files[i])});`);
+    img.setAttribute('position',`${imgPosition}`);
     document.getElementById('contenedorIMG').appendChild(img);
     eliminarIMG(imgID);
+
+    let image = await cargarImagen(URL.createObjectURL(file.files[i]));
+    arrayIMG.push(image);
 
 }
 
@@ -42,15 +49,26 @@ const eliminarIMG = function(imgID){
     btnEliminar.innerHTML = 'X';
 }
 
-async function generarPDF(nomComite, ciudad, horaInicio, horaFin, lugar, direccionGeneral, regional, centroFormacion, agenda, objetivos, conclusiones, actividad, responsable, fecha, formFileMultiple){
-    
-    const imagen = await cargarImagen('../assets/img/acta_registro_asistencia.jpg');
-    
+async function generarPDF(nomComite, ciudad, horaInicio, horaFin, lugar, direccionGeneral, regional, centroFormacion, agenda, objetivos, conclusiones, actividad, responsable, fecha, arrayIMG){
     const pdf = new jsPDF('p', 'pt', 'letter');
 
-    pdf.addImage(imagen, 'PNG', 0, 0, 570, 800);
+    const imagen1 = await cargarImagen('../assets/img/formato_de_acta_page-0001.jpg');
+    const imagen2 = await cargarImagen('../assets/img/formato_de_acta_page-0002.jpg');
     
-    pdf.save('example.pdf')
+    pdf.addImage(imagen1, 'PNG', 0, 0, 600, 800);
+    
+    const pdf2 = pdf.addPage('p','letter');
+    pdf2.addImage(imagen2, 'PNG', 0, 0, 600, 800);
+
+    let i = 145;
+    let posicion1 = 90;
+    arrayIMG.forEach(function(imagen) {
+        pdf2.addImage(imagen, 'PNG', posicion1, 405, 140, 80);
+        i = i++;
+        posicion1 = posicion1 + i;
+    });
+    
+    pdf.save('GD-F-007_Formato_de_Acta.pdf')
 
 }
 
@@ -60,6 +78,7 @@ file.addEventListener('change', function(){
         let imgID = Math.floor(Math.random() * 30000)+'_'+Date.now();
 
         crearIMG(file, i, imgID);
+        imgPosition++
     }
 });
 
@@ -81,11 +100,14 @@ formularioPDF.addEventListener('submit', (e)=>{
     let responsable = document.getElementById('responsable').value;
     let fecha = document.getElementById('fecha').value;
 
-    // generarPDF(nomComite, ciudad, horaInicio, horaFin, lugar, direccionGeneral, regional, centroFormacion, agenda, objetivos, conclusiones, actividad, responsable, fecha, formFileMultiple);
+    generarPDF(nomComite, ciudad, horaInicio, horaFin, lugar, direccionGeneral, regional, centroFormacion, agenda, objetivos, conclusiones, actividad, responsable, fecha, arrayIMG);
+
 })
 
 document.body.addEventListener('click', function(e){
     if(e.target.classList.contains('close')){
         e.target.parentNode.remove();
+        let positionArray = e.target.parentNode.getAttribute('position');
+        delete(arrayIMG[positionArray]);
     }
 });
