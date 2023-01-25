@@ -30,7 +30,7 @@ function cargarImagen(url){
 async function crearIMG(file, i, imgID){
 
     let img = document.createElement('div');
-    img.classList.add('img','col-2','mx-1','mb-1',imgID);
+    img.classList.add('img','col-3','col-md-2','mx-1','mb-1',imgID);
     img.dataset.id = imgID;
     img.setAttribute('style',`background-image: url(${URL.createObjectURL(file.files[i])});`);
     img.setAttribute('position',`${imgPosition}`);
@@ -85,22 +85,7 @@ file.addEventListener('change', function(){
 formularioPDF.addEventListener('submit', (e)=>{
     e.preventDefault();
 
-    let nomComite = document.getElementById('nomComite').value;
-    let ciudad = document.getElementById('ciudad').value;
-    let horaInicio = document.getElementById('horaInicio').value;
-    let horaFin = document.getElementById('horaFin').value;
-    let lugar = document.getElementById('lugar').value;
-    let direccionGeneral = document.getElementById('direccionGeneral').value;
-    let regional = document.getElementById('regional').value;
-    let centroFormacion = document.getElementById('centroFormacion').value;
-    let agenda = document.getElementById('agenda').value;
-    let objetivos = document.getElementById('objetivos').value;
-    let conclusiones = document.getElementById('conclusiones').value;
-    let actividad = document.getElementById('actividad').value;
-    let responsable = document.getElementById('responsable').value;
-    let fecha = document.getElementById('fecha').value;
 
-    generarPDF(nomComite, ciudad, horaInicio, horaFin, lugar, direccionGeneral, regional, centroFormacion, agenda, objetivos, conclusiones, actividad, responsable, fecha, arrayIMG);
 
 })
 
