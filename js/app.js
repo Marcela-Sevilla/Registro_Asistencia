@@ -3,6 +3,7 @@ var file = document.getElementById('file');
 let arrayIMG = [];
 let imgPosition = 0;
 
+// Función para combertir imagen a formato 64
 function cargarImagen(url){
 
     return new Promise(resolve => {
@@ -27,6 +28,7 @@ function cargarImagen(url){
 
 }
 
+// Función para crear y guardar las imagenes
 async function crearIMG(file, i, imgID){
 
     let img = document.createElement('div');
@@ -42,6 +44,7 @@ async function crearIMG(file, i, imgID){
 
 }
 
+// Función para eliminar imagen
 const eliminarIMG = function(imgID){
     let btnEliminar = document.createElement('div');
     btnEliminar.classList.add('close','btn', 'btn-danger', 'mt-1');
@@ -49,6 +52,7 @@ const eliminarIMG = function(imgID){
     btnEliminar.innerHTML = 'X';
 }
 
+// Función para llenar y crear PDF
 async function generarPDF(nomComite, ciudadFecha, horaInicio, horaFin, lugar, lugarFormacion, agenda, objetivos, desrrolloReunion, conclusiones, actividad, responsable, fechaActividad, arrayIMG){
     const pdf = new jsPDF('p', 'pt', 'letter');
     const imagen1 = await cargarImagen('../assets/img/formato_de_acta_page-0001.jpg');
@@ -105,14 +109,15 @@ async function generarPDF(nomComite, ciudadFecha, horaInicio, horaFin, lugar, lu
                 pdf2.addImage(imagen, 'PNG', 380, 610, 140, 90);
             break;
         }
-    
         i++
+
     });
     
     pdf.save('GD-F-007_Formato_de_Acta.pdf')
 
 }
 
+// tomar los archivos del input file
 file.addEventListener('change', function(){
     let files = file.files.length;
     for(let i = 0; i < files; i++){
@@ -124,6 +129,7 @@ file.addEventListener('change', function(){
     }
 });
 
+// Guardar los datos del formulario
 formularioPDF.addEventListener('submit', (e)=>{
     e.preventDefault();
 
@@ -176,6 +182,7 @@ formularioPDF.addEventListener('submit', (e)=>{
 
 })
 
+// Eliminar imagenes del body y arrayIMG
 document.body.addEventListener('click', function(e){
     if(e.target.classList.contains('close')){
         e.target.parentNode.remove();
