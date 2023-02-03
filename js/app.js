@@ -3,7 +3,7 @@ var file = document.getElementById('file');
 let arrayIMG = [];
 let imgPosition = 0;
 
-// Función para combertir imagen a formato 64
+// comvertir imagen a base 64
 function cargarImagen(url){
 
     return new Promise(resolve => {
@@ -32,7 +32,7 @@ function cargarImagen(url){
 async function crearIMG(file, i, imgID){
 
     let img = document.createElement('div');
-    img.classList.add('img','col-3','col-md-2','mx-1','mb-1',imgID);
+    img.classList.add('img','col-12','col-md-2','me-1','mb-1',imgID);
     img.dataset.id = imgID;
     img.setAttribute('style',`background-image: url(${URL.createObjectURL(file.files[i])});`);
     img.setAttribute('position',`${imgPosition}`);
@@ -47,9 +47,10 @@ async function crearIMG(file, i, imgID){
 // Función para eliminar imagen
 const eliminarIMG = function(imgID){
     let btnEliminar = document.createElement('div');
-    btnEliminar.classList.add('close','btn', 'btn-danger', 'mt-1');
+    btnEliminar.classList.add('close','btn', 'btn-danger');
     document.getElementsByClassName(imgID)[0].appendChild(btnEliminar);
-    btnEliminar.innerHTML = 'X';
+    btnEliminar.innerHTML = '<i class="bi bi-x-lg"></i>';
+    console.log(`Imagen ${imgID} eliminada`)
 }
 
 // Función para llenar y crear PDF

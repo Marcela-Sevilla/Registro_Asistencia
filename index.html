@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,118 +9,152 @@
     <title>Registro de Asistencia SENA</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.min.css">
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="./assets/bootstrap-icons/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
 </head>
+
 <body class="bg-light">
-    <nav class="navbar">
+
+    <!-- ****************************************** -->
+    <!--               Start navbar                 -->
+    <!-- ****************************************** -->
+    <nav class="navbar pb-4">
         <div class="container-fluid">
-          <div class="navbar-brand d-flex align-items-center">
-            <img src="./assets/img/logo-blanco.png" alt="Logo" width="45" height="45" class="d-inline-block align-text-top">
-            <span class="ms-2 fs-4 fw-semibold text-white">Registro de Asistencia SENA</span>
-          </div>
+            <div class="navbar-brand d-flex align-items-center">
+                <img src="./assets/img/logo-blanco.png" alt="Logo" width="45" height="45"
+                    class="d-inline-block align-text-top">
+                <span class="ms-2 fs-4 fw-semibold text-white">Registro de Asistencia SENA</span>
+            </div>
         </div>
     </nav>
 
-    <main class="container py-5">
-        <section class="card shadow border-2">
+    <!-- ****************************************** -->
+    <!--               Start Header                 -->
+    <!-- ****************************************** -->
+    <div class="container px-md-5">
+        <header class="header card mt-5 mb-2 pt-4 pb-2 px-4 ">
+            <h1 class="fs-2">
+                Formulario de Acta y Registro de Asistencia
+            </h1>
+        </header>
+    </div>
 
-            <div class="card-header text-white">
-                <h3><i class="bi bi-card-heading"></i> Formulario de Acta y Registro de Asistencia</h3>
-            </div>
-
-            <div class="card-body p-4">
+    <!-- ****************************************** -->
+    <!--                Start Form                  -->
+    <!-- ****************************************** -->
+    <main class="container mt-1 mb-5 px-md-5">
+        <section class="card">
+            <div class="card-body p-lg-5">
                 <form id="formRegistroAsistencia" class="row">
                     <div class="col-md-6 mb-3">
-                        <label for="nomComite" class="form-label fw-semibold">NOMBRE DEL COMIT&Eacute; O DE LA REUNI&Oacute;N:</label>
+                        <label for="nomComite" class="form-label fw-semibold">Nombre del comité o de la reunión:</label>
                         <input id="nomComite" type="text" class="form-control">
                     </div>
+
                     <div class="col-md-6 mb-3">
-                        <label for="ciudad" class="form-label fw-semibold">CIUDAD:</label>
+                        <label for="ciudad" class="form-label fw-semibold">Ciudad:</label>
                         <input id="ciudad" type="text" class="form-control">
                     </div>
+
                     <div class="col-md-2 mb-3">
-                        <label for="fecha" class="form-label fw-semibold">FECHA:</label>
+                        <label for="fecha" class="form-label fw-semibold">Fecha:</label>
                         <input id="fecha" type="date" class="form-control">
                     </div>
+
                     <div class="col-md-2 mb-3">
-                        <label for="horaInicio" class="form-label fw-semibold">HORA INICIO:</label>
+                        <label for="horaInicio" class="form-label fw-semibold">Hora inicio:</label>
                         <input id="horaInicio" type="time" class="form-control">
                     </div>
+
                     <div class="col-md-2 mb-3">
-                        <label for="horaFin" class="form-label fw-semibold">HORA FIN</label>
+                        <label for="horaFin" class="form-label fw-semibold">Hora fin:</label>
                         <input id="horaFin" type="time" class="form-control">
                     </div>
+
                     <div class="col-md-6 mb-3">
-                        <label for="lugar" class="form-label fw-semibold">LUGAR Y/O ENLACE:</label>
+                        <label for="lugar" class="form-label fw-semibold">Lugar y/o enlace:</label>
                         <input id="lugar" type="text" class="form-control">
                     </div>
+
                     <div class="col-md-4 mb-3">
-                        <label for="direccionGeneral" class="form-label fw-semibold">DIRECCIÓN GENERAL:</label>
+                        <label for="direccionGeneral" class="form-label fw-semibold">Dirección general:</label>
                         <input id="direccionGeneral" type="text" class="form-control">
                     </div>
+
                     <div class="col-md-4 mb-3">
-                        <label for="regional" class="form-label fw-semibold">REGIONAL:</label>
+                        <label for="regional" class="form-label fw-semibold">Regional:</label>
                         <input id="regional" type="text" class="form-control">
                     </div>
+
                     <div class="col-md-4 mb-3">
-                        <label for="centroFormacion" class="form-label fw-semibold">CENTRO DE FORMACI&Oacute;N:</label>
+                        <label for="centroFormacion" class="form-label fw-semibold">Centro de formacion</label>
                         <input id="centroFormacion" type="text" class="form-control">
                     </div>
+
                     <div class="col-md-6 mb-3">
-                        <label for="agenda" class="form-label fw-semibold">AGENDA O PUNTOS PARA DESARROLLAR:</label>
+                        <label for="agenda" class="form-label fw-semibold">Agenda o puntos a desarrollar:</label>
                         <textarea id="agenda" class="form-control" rows="3"></textarea>
                     </div>
+
                     <div class="col-md-6 mb-3">
-                        <label for="objetivos" class="form-label fw-semibold">OBJETIVO(S) DE LA REUNI&Oacute;N:</label>
+                        <label for="objetivos" class="form-label fw-semibold">Objetivo(s) de la reunión:</label>
                         <textarea id="objetivos" class="form-control" rows="3"></textarea>
                     </div>
+
                     <div class="col-md-6 mb-3">
-                        <label for="desrrolloReunion" class="form-label fw-semibold">DESARROLLO DE LA REUNI&Oacute;N:</label>
+                        <label for="desrrolloReunion" class="form-label fw-semibold">Desarrollo de la reunión:</label>
                         <textarea id="desrrolloReunion" class="form-control" rows="3"></textarea>
                     </div>
+
                     <div class="col-md-6 mb-3">
-                        <label for="conclusiones" class="form-label fw-semibold">CONCLUSIONES:</label>
+                        <label for="conclusiones" class="form-label fw-semibold">Conclusiones:</label>
                         <textarea id="conclusiones" class="form-control" rows="3"></textarea>
                     </div>
-                    <h4><i class="bi bi-bar-chart-fill"></i> COMPROMISOS</h4>
+
+                    <div class="hr mt-4"></div>
+                    <h2 class="fw-semibold mb-4">Compromisos</h2>
+
                     <div class="col-md-6 mb-3">
-                        <label for="actividad" class="form-label fw-semibold">ACTIVIDAD:</label>
+                        <label for="actividad" class="form-label fw-semibold">Actividad:</label>
                         <textarea id="actividad" class="form-control" rows="5"></textarea>
                     </div>
+
                     <div class="col-md-6">
                         <div class="mb-2">
-                            <label for="responsable" class="form-label fw-semibold">RESPONSABLE:</label>
+                            <label for="responsable" class="form-label fw-semibold">Responsable:</label>
                             <input id="responsable" type="text" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label for="fechaActividad" class="form-label fw-semibold">FECHA DE ACTIVIDAD:</label>
+                            <label for="fechaActividad" class="form-label fw-semibold">Fecha de actividad:</label>
                             <input id="fechaActividad" type="date" class="form-control">
                         </div>
                     </div>
+
                     <div class="mb-3 col-12">
-                        <div class="border border-2 border-dark-subtle rounded p-3">
-    
-                           <h5 class="my-2 text-center">ASISTENTES: (Incorporar registro de asistencia)</h5>
-                           <p><b>Nota:</b> Puede incluirse imagen o captura de pantalla de los asistentes, si se trata de una reunión virtual o, de los asistentes que participan a través de una plataforma virtual (m&aacute;ximo 9 imagenes).</p>
-                           
-                           <div class="row p-3" id="contenedorIMG">
-                           </div>
-    
-                           <div class="container-file text-start">
-                                <input type="file" class="file" id="file" name="file[]" multiple>
-                                <span class="btn btn-warning fw-semibold shadow-sm">Agregar <i class="bi bi-card-image"></i></span>
-                           </div>
-    
+                        <div class="border border-4  rounded p-3">
+
+                            <h3 class="my-2 text-center fs-4">ASISTENTES: (Incorporar registro de asistencia)</h3>
+                            <p><b>Nota:</b> Puede incluirse imagen o captura de pantalla de los asistentes, si se trata
+                                de una reunión virtual o, de los asistentes que participan a través de una plataforma
+                                virtual (máximo 9 imagenes).</p>
+
+                            <div class="row p-3" id="contenedorIMG">
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-4">
+                                <input type="file" id="file" class="form-control">
+                            </div>
                         </div>
                     </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-lg btn-enviar shadow-sm"><i class="bi bi-filetype-pdf"></i> Descargar Acta</button>
+                    <div class="text-center mt-2">
+                        <button type="submit" class="btn btn-lg btn-enviar shadow-sm"><i class="bi bi-filetype-pdf"></i>
+                            Descargar Acta</button>
                     </div>
-               </form>
+                </form>
 
             </div>
         </section>
@@ -133,6 +168,7 @@
     <!-- Signature_Pad -->
     <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
     <!-- APP JS -->
-    <script src="./js/app.js"></script>
+    <script src="./js/app.js" type="module"></script>
 </body>
+
 </html>
