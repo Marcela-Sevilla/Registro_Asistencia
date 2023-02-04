@@ -32,7 +32,7 @@ function cargarImagen(url){
 async function crearIMG(file, i, imgID){
 
     let img = document.createElement('div');
-    img.classList.add('img','col-12','col-md-2','me-1','mb-1',imgID);
+    img.classList.add('img','col-12','col-lg-3', 'img-fluid','me-1','mb-1',imgID);
     img.dataset.id = imgID;
     img.setAttribute('style',`background-image: url(${URL.createObjectURL(file.files[i])});`);
     img.setAttribute('position',`${imgPosition}`);
