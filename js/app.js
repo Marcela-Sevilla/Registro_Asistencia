@@ -50,7 +50,6 @@ const eliminarIMG = function(imgID){
     btnEliminar.classList.add('close','btn', 'btn-danger');
     document.getElementsByClassName(imgID)[0].appendChild(btnEliminar);
     btnEliminar.innerHTML = '<i class="bi bi-x-lg"></i>';
-    console.log(`Imagen ${imgID} eliminada`)
 }
 
 // Función para llenar y crear PDF
